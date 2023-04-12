@@ -10,7 +10,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 band = np.loadtxt('REFORMATTED_BAND.dat')  # import band data
-
+#band_UP = np.loadtxt('REFORMATTED_BAND_UP.dat')
+#band_DW = np.loadtxt('REFORMATTED_BAND_DW.dat')
 
 label = pd.read_csv('KLABELS')  # import modified KLABELS
 label = label.values.tolist()
@@ -19,9 +20,11 @@ klabel = np.shape(label)[0]
 
 # extracting the number of k points and the number of energy bands
 shape = np.shape(band)
+# shape = np.shape(band_UP)
 kpoints = shape[0]
 n_band = shape[1]-1  # The first column is kpath
 k_max = band[-1,0]
+# k_max = band_UP[-1,0]
 
 # labeling high symmetry point
 Label=[]
@@ -49,10 +52,12 @@ for i in range(klabel):
 ax.axhline(y=0.,linewidth=1.5,linestyle='--',color='k')
 
 ax.plot(band[:,0], band[:,1:-1], color='blue')
+# ax.plot(band_UP[:,0], band_UP[:,1:-1], color='blue')
+# ax.plot(band_DW[:,0], band_DW[:,1:-1], color='red')
 
 fig.tight_layout()
-fig.savefig('Band_100.pdf')
-fig.savefig('Band_100.png',format='png')
+fig.savefig('Band.pdf')
+fig.savefig('Band.png',format='png')
 
 #print(label[0][1])
 
