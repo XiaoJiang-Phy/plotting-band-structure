@@ -58,10 +58,12 @@ To plot a non-spin-polarized band structure, run the `band.py` script:
 
 ```bash
 python3 band.py
+```
 
 For a spin-polarized band structure, run the `band-spin.py` script:
 ```bash
 python3 band-spin.py
+```
 
 ## Example
 
