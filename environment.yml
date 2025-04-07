@@ -1,0 +1,12 @@
+name: plotting-band-structure
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - numpy
+  - pandas
+  - matplotlib
+  - pip
+  - pip:
+      # List any pip packages here if needed
+      # e.g., - somepackage
